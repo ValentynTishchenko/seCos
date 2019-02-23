@@ -1,0 +1,11 @@
+@import 'styles/common/variables';
+
+$border-color: $light-grey-blue;
+
+.sign-in-form-content {
+
+  a {
+    margin-top: 4px;
+    align-self: flex-end;
+  }
+}

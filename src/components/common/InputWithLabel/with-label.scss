@@ -1,0 +1,8 @@
+.with-label-input {
+  position: relative;
+
+  &__label {
+    position: absolute;
+    font-size: .5rem;
+  }
+}

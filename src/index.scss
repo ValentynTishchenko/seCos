@@ -1,0 +1,8 @@
+$fa-font-path: "./webfonts";
+@import url($fa-font-path + "/Helvetica/Helvetica.scss");
+
+@import "./styles/main.scss";
+
+body {
+  font-family: Helvetica, sans-serif;
+}

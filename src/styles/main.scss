@@ -1,0 +1,12 @@
+@import "../../node_modules/normalize-scss/sass/normalize";
+
+@include normalize();
+
+@import "common/variables";
+@import "common/base";
+@import "common/helpers";
+
+a {
+  color: $white;
+}
+

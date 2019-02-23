@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router';
 import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
 
 import Input from 'src/components/common/Input';
 import GenericForm from 'src/components/common/GenericFormComponents/GenericForm';
@@ -31,7 +32,9 @@ class SignInForm extends PureComponent {
     <GenericFormContent additionalClassNames='sign-in-form-content'>
       <Input onChange={this.onChange} name='email' placeholder='Your Email' />
       <Input onChange={this.onChange} name='password' placeholder='Password' type='password' />
-      <button className='button submit-button'>Sign In</button>
+      <Button variant="contained" color="primary">
+        Sign In
+      </Button>
     </GenericFormContent>
   );
 

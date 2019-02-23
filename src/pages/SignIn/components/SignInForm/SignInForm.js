@@ -32,7 +32,7 @@ class SignInForm extends PureComponent {
     <GenericFormContent additionalClassNames='sign-in-form-content'>
       <Input onChange={this.onChange} name='email' placeholder='Your Email' />
       <Input onChange={this.onChange} name='password' placeholder='Password' type='password' />
-      <Button variant="contained" color="primary">
+      <Button type='submit' variant="contained" color="primary">
         Sign In
       </Button>
     </GenericFormContent>

@@ -1,20 +1,22 @@
-import apiClient from './apiClient';
-import { API_BASE_URL } from '../constants/baseUrl';
+import apiClient, { config } from './apiClient';
+import { API_BASE_URL,client_id } from '../constants/api';
 
-
-export const signIn = (login, password) => apiClient.post(`${API_BASE_URL}/account/api/user/login`,
-  {
-    login,
-    password
-  });
-
-export const signUp = data => apiClient.post(`${API_BASE_URL}/registration/api/registration`,
-  data
+const createSignInFormData = (password, username) => {
+  const formData = new FormData();
+  formData.set('password', password);
+  formData.set('username', username);
+  formData.set('client_id', client_id);
+  formData.set('grant_type', 'password');
+  return formData;
+};
+export const signIn = (username = 'romanchi', password = 'frdfhtkm12') => apiClient.post(
+  `${API_BASE_URL}/oauth/token`,
+  createSignInFormData(password, username),
+  config
 );
 
 const apiGateway = {
   signIn,
-  signUp,
 };
 
 export default apiGateway;

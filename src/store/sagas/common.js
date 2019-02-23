@@ -26,11 +26,12 @@ export function* callApi(
 
     const response = yield call.apply(this, flatten([method, args]));
 
-    if (response.ok) {
-      yield put(onSuccess());
-    } else {
-      yield put(onFailure());
-    }
+    yield put(onSuccess(response.data || {}));
+    // if (response.ok) {
+    //   yield put(onSuccess());
+    // } else {
+    //   yield put(onFailure());
+    // }
     return response;
   } catch (error) {
     const failurePayload = failureCases.default || {code: 404};

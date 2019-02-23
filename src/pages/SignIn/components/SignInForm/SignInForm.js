@@ -24,16 +24,13 @@ class SignInForm extends PureComponent {
     const {onSubmit} = this.props;
     const {login, password} = this.state;
     console.log('nice try');
-    onSubmit(login,password);
+    onSubmit(login, password);
   };
 
   renderFormContent = () => (
     <GenericFormContent additionalClassNames='sign-in-form-content'>
       <Input onChange={this.onChange} name='email' placeholder='Your Email' />
       <Input onChange={this.onChange} name='password' placeholder='Password' type='password' />
-      <Input onChange={this.onChange} name='confirmPassword' placeholder='Confirm password'
-             type='password' />
-      <Link style={{alignSelf: 'flex-end'}} to='/forgot-password'>Forgot Password ?</Link>
       <button className='button submit-button'>Sign In</button>
     </GenericFormContent>
   );

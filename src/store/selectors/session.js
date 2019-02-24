@@ -3,7 +3,9 @@ import { propertyOrEmptyObject } from 'src/helpers/common';
 
 export const getSession = state => propertyOrEmptyObject(state, 'session');
 
+const sessioMockedn = 'fdd822c7-eedf-47f6-88b2-19949f2c33b1';
 export const getAccessToken = createSelector(
   [getSession],
-  session => session.accessToken || 'ffefaeed-e6f9-4c35-9d03-c83da006ed62'
-);
+  session => session.accessToken || sessioMockedn,
+  )
+;

@@ -6,7 +6,6 @@ export const mapStateToProps = state => ({});
 export const mapDispatchToProps = dispatch => ({
   fetchAllergiesByBarcode: barcode => {
     dispatch(fetchAllergiesByBarcodeRequested(barcode));
-    console.log(barcode);
   },
 });
 

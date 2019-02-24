@@ -131,7 +131,7 @@ class PersistentDrawerLeft extends React.Component {
                 <MenuIcon />
               </IconButton>
               <Typography variant="h6" color="inherit" noWrap>
-                Alergen Bitch
+                Alergen
               </Typography>
             </Toolbar>
           </AppBar>

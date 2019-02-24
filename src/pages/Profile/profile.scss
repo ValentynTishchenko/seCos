@@ -19,12 +19,16 @@
     border-radius: 2px;
   }
 
-  .Profile-demo-146 {
+  [class^="Profile-demo-"] {
     background-color: inherit;
   }
 
-  .MuiAvatar-colorDefault-246 {
+  [class^="MuiAvatar-colorDefault-"] {
     color: #fafafa;
+  }
+
+  [class^="MuiList-padding-"] {
+    background-color: inherit;
   }
 }
 

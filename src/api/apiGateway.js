@@ -16,16 +16,20 @@ export const signIn = (username = 'romanchi', password = 'frdfhtkm12') => apiCli
   config
 );
 
-export const fetchAllergiesByBarcode = (barcode, token) => apiClient.get(
-  `${API_BASE_URL}/get_alergens/${barcode}`,
-  {
-    ...config,
-    headers: {'Authorization': 'bearer ' + token}
-  }
-);
+export const fetchAllergiesByBarcode = ({barcode, token}) => {
+  barcode = 9002490100070;
+  return apiClient.get(
+    `${API_BASE_URL}/user/alergenitems/${barcode}`,
+    {
+      ...config,
+      headers: {'Authorization': 'Bearer ' + token}
+    }
+  );
+};
 
 const apiGateway = {
   signIn,
+  fetchAllergiesByBarcode,
 };
 
 export default apiGateway;

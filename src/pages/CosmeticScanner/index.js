@@ -5,7 +5,7 @@ import { fetchAllergiesByBarcodeRequested } from './store/actions';
 export const mapStateToProps = state => ({});
 export const mapDispatchToProps = dispatch => ({
   fetchAllergiesByBarcode: barcode => {
-    dispatch(fetchAllergiesByBarcodeRequested);
+    dispatch(fetchAllergiesByBarcodeRequested(barcode));
     console.log(barcode);
   },
 });

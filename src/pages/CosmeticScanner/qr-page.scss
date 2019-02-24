@@ -1,0 +1,39 @@
+.qr-page {
+
+  &__video {
+    height: 240px;
+    position: relative;
+    transition: background 0.3s;
+
+    &--off {
+      background-color: #e0e0e0;
+    }
+
+    svg {
+      position: absolute;
+      top: calc(50% - 40px);
+      left: calc(50% - 40px);
+      width: 80px;
+      height: 80px;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    &--on svg {
+      opacity: 0;
+    }
+
+    .camera {
+      video,
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .addButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+  }
+}

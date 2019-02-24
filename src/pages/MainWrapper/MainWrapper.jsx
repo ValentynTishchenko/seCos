@@ -131,7 +131,7 @@ class PersistentDrawerLeft extends React.Component {
                 <MenuIcon />
               </IconButton>
               <Typography variant="h6" color="inherit" noWrap>
-                Alergen Bitch
+                Alergen
               </Typography>
             </Toolbar>
           </AppBar>
@@ -151,16 +151,18 @@ class PersistentDrawerLeft extends React.Component {
             </div>
             <Divider />
             <List>
-              <Link to="/">
+              <Link to={ROUTES.home}>
                 <ListItem button>
                   <ListItemIcon><HomeIcon /></ListItemIcon>
                   <ListItemText primary='Home' />
                 </ListItem>
               </Link>
-              <ListItem button>
-                <ListItemIcon><PersonIcon /></ListItemIcon>
-                <ListItemText primary='Profile' />
-              </ListItem>
+              <Link to={ROUTES.profile}>
+                <ListItem button>
+                  <ListItemIcon><PersonIcon /></ListItemIcon>
+                  <ListItemText primary='Profile' />
+                </ListItem>
+              </Link>
               <Link to={ROUTES.cosmeticScanner}>
                 <ListItem button>
                   <ListItemIcon><AddCircleIcon /></ListItemIcon>

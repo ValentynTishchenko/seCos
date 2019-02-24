@@ -6,6 +6,7 @@ import { ROUTES } from '../constants/routes';
 import SignIn from '../pages/SignIn';
 import UserAllergies from '../pages/UserAllergies';
 import CosmeticScanner from '../pages/CosmeticScanner';
+import Profile from '../pages/Profile';
 import MainWrapper from '../pages/MainWrapper';
 
 
@@ -14,6 +15,7 @@ export const Router = ({history}) => (
     <Route path={ROUTES.home} component={MainWrapper}>
       <Route path={ROUTES.signIn} component={SignIn} />
       <Route path={ROUTES.userAllergies} component={UserAllergies} />
+      <Route path={ROUTES.profile} component={Profile} />
       <Route path={ROUTES.cosmeticScanner} component={CosmeticScanner} />
     </Route>
   </ReactRouter>

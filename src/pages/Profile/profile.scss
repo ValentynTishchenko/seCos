@@ -1,0 +1,39 @@
+.profile {
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .not-flex-bitch {
+    display: flex;
+  }
+
+  &__description {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .alergen-item {
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+  }
+
+  [class^="Profile-demo-"] {
+    background-color: inherit;
+  }
+
+  [class^="MuiAvatar-colorDefault-"] {
+    color: #fafafa;
+  }
+
+  [class^="MuiList-padding-"] {
+    background-color: inherit;
+  }
+}
+
+.loader-superunique7347373473 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -19,7 +19,7 @@ export class CosmeticScanner extends React.Component {
       isCameraAllowed: false,
       isAlert: false,
       isCameraAsked: false,
-      message: 'Allow camera Bitch !',
+      message: 'Allow camera plz !',
       isTouch: isTouchDevice(),
       isSpeaner: false,
     };

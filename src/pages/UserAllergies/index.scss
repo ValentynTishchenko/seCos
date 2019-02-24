@@ -1,0 +1,82 @@
+.user-allergies-page {
+  margin: 0 auto;
+  width: 700px;
+  text-align: center;
+
+
+  .cong-text {
+    margin: 64px;
+    font-size: 32px;
+
+  }
+
+  .back-btn {
+    border-radius: 4px;
+    min-width: 200px;
+    padding: 20px;
+    font-size: 20px;
+    background: #16A085;
+    color: white;
+    border: 1px solid #16A085;
+  }
+
+  .allergy {
+    border-radius: 4px;
+    position: relative;
+    height: 80px;
+    margin: 10px auto;
+    width: 600px;
+    text-align: left;
+    padding-left: 20px;
+
+    .title {
+      font-weight: 600;
+      font-size: 22px;
+      color: #F75C4C;
+    }
+
+    .context {
+      color: #9F9F9F;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .details-left {
+      top: 0;
+      left: 0;
+      position: absolute;
+      height: 100%;
+      background: #F75C4C;
+      width: 10px;
+      float: right;
+      &:hover {
+        background: #BC3535;
+      }
+    }
+
+    .details {
+
+      display: flex;
+
+      p {
+        padding-top: 30px;
+        text-align: center;
+        width: 100%;
+        display: block;
+        margin: 0;
+        align-items: center;
+        justify-items: center;
+      }
+
+      color: white;
+
+      top: 0;
+      right: 0;
+      position: absolute;
+      height: 100%;
+      background: #F75C4C;;
+      width: 80px;
+      float: right;
+    }
+  }
+}

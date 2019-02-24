@@ -5,7 +5,7 @@ export const getAllergiesState = state => propertyOrEmptyObject(state, 'allergie
 
 export const getAllergies = createSelector(
   [getAllergiesState],
-  ({allergies}) => allergies || []
+  (allergies) => allergies.userAllergies || []
 );
 
 export const isAllergiesLoaded = createSelector(

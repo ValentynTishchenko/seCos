@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Fab from '@material-ui/core/Fab';
 import CameraIcon from '@material-ui/icons/Camera';
 import CenterFocusWeakIcon from '@material-ui/icons/CenterFocusWeak';
-import QrReader from 'react-qr-scanner'
+import QrReader from 'react-qr-scanner';
 import classNames from 'classnames';
 import Snackbar from '@material-ui/core/Snackbar';
 import { isTouchDevice } from '../../helpers/common';
@@ -21,6 +21,7 @@ export class CosmeticScanner extends React.Component {
       isCameraAsked: false,
       message: 'Allow camera Bitch !',
       isTouch: isTouchDevice(),
+      isSpeaner: false,
     };
     this.qrScanner = React.createRef();
   }
@@ -34,23 +35,24 @@ export class CosmeticScanner extends React.Component {
   };
 
   handleScanEvent = (decodedValue) => {
-    if (!this.state.isCameraAllowed) this.setState({ isCameraAllowed: true });
+    if (!this.state.isCameraAllowed) this.setState({isCameraAllowed: true});
     if (decodedValue) {
-      this.props.fetchAllergiesByBarcode(decodedValue);  
+      this.setState({isSpeaner: true});
+      this.props.fetchAllergiesByBarcode(decodedValue);
     } else {
       this.setState({
         isAlert: true,
         message: 'No code found',
-      })
+      });
     }
   };
 
   handleHideErrorEvent = () => {
-    this.setState({ isAlert: false })
+    this.setState({isAlert: false});
   };
 
   handleErrorEvent = () => {
-    this.setState({ isAlert: true })
+    this.setState({isAlert: true});
   };
 
   handleAskCamera = () => {
@@ -63,25 +65,25 @@ export class CosmeticScanner extends React.Component {
           isCameraAsked: false,
           isAlert: false,
           isCameraAllowed: false,
-        })
+        });
       } else {
-      this.setState({
-        isCameraAsked: true,
-        isAlert: true,
-        message: 'Plz allow camera!',
-      })
+        this.setState({
+          isCameraAsked: true,
+          isAlert: true,
+          message: 'Plz allow camera!',
+        });
       }
     }
   };
 
-  render() {
+  rendeContent() {
     const videoClass = classNames({
       'qr-page__video': true,
       'qr-page__video--on': this.state.isCameraAllowed,
       'qr-page__video--off': !this.state.isCameraAllowed,
     });
     return (
-      <section className="qr-page">
+      <React.Fragment>
         <h1>Cosmetic Scanner</h1>
 
         <div className={videoClass}>
@@ -105,7 +107,7 @@ export class CosmeticScanner extends React.Component {
         </div>
 
         <Snackbar
-          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+          anchorOrigin={{vertical: 'top', horizontal: 'center'}}
           open={this.state.isAlert}
           autoHideDuration={3000}
           onClose={this.handleHideErrorEvent}
@@ -114,6 +116,22 @@ export class CosmeticScanner extends React.Component {
           }}
           message={<span id="message-id">{this.state.message}</span>}
         />
+      </React.Fragment>
+    );
+  }
+
+  renderSpeaner = () => {
+    return (<section>
+      spiner here
+    </section>);
+  };
+
+  render() {
+    const {isSpeaner} = this.state;
+    const content = isSpeaner ? this.renderSpeaner() : this.rendeContent();
+    return (
+      <section className="qr-page">
+        {content}
       </section>
     );
   }

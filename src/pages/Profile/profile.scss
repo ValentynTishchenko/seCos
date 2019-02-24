@@ -1,0 +1,35 @@
+.profile {
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .not-flex-bitch {
+    display: flex;
+  }
+
+  &__description {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .alergen-item {
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+  }
+
+  .Profile-demo-146 {
+    background-color: inherit;
+  }
+
+  .MuiAvatar-colorDefault-246 {
+    color: #fafafa;
+  }
+}
+
+.loader-superunique7347373473 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

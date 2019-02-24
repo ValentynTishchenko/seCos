@@ -3,10 +3,12 @@ import { applyMiddleware, compose } from 'redux';
 import { routerMiddleware as createRouterMiddleware } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import get from 'lodash/get';
+import { autoRehydrate } from 'redux-persist';
 
 const configureMiddleware = (history, additionalMiddleware = []) => {
   const sagaMiddleware = createSagaMiddleware();
   const routerMiddleware = createRouterMiddleware(history);
+  const rehydrationMiddleware = autoRehydrate();
   const loggerMiddleware = createLogger({
     predicate: () => {
       return get(window, ['MY_REDUX_LOGGER', 'enabled'], true);
@@ -15,7 +17,8 @@ const configureMiddleware = (history, additionalMiddleware = []) => {
 
   const middlewareKeys = {
     router: routerMiddleware,
-    sagas: sagaMiddleware
+    sagas: sagaMiddleware,
+    rehydration: rehydrationMiddleware,
   };
 
   const middleware = [
@@ -33,7 +36,7 @@ const configureMiddleware = (history, additionalMiddleware = []) => {
 
   return {
     ...middlewareKeys,
-    stack: compose(applyMiddleware(...middleware), ...additionalMiddleware)
+    stack: compose(rehydrationMiddleware, applyMiddleware(...middleware), ...additionalMiddleware)
   };
 };
 export { configureMiddleware };
